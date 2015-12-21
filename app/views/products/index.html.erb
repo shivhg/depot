@@ -1,4 +1,5 @@
 <h1>Listing products</h1>
+<%= paginate @products%>
 <table>
   <% @products.each do |product| %>
       <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
@@ -12,10 +13,16 @@
           </dl>
         </td>
         <td class="list_actions">
+          <% if can? :read, Product %>
           <%= link_to 'Show', product %><br/>
+              <%end %>
+          <%if can? :update, Product %>
           <%= link_to 'Edit', edit_product_path(product) %><br/>
+              <%end%>
+          <%if can? :delete, Product %>
           <%= link_to 'Destroy', product, method: :delete,
                       data: { confirm: 'Are you sure?' } %>
+              <%end %>
         </td>
       </tr>
   <% end %>

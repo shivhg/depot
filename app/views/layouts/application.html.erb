@@ -8,6 +8,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= controller.controller_name %>">
+
+<div id="session">
+  <% if user_signed_in? %>
+    <%= "your signed in #{current_user.email}" %>
+    <%=  link_to "sign_out", destroy_user_session_path,method: :delete %>
+  <% else %>
+    <%= link_to "sign in here", new_user_session_path %>
+  <%end%>
+</div>
+
 <div id="banner">
   <%= image_tag("logo.png") %>
   <%= @page_title || "Pragmatic Bookshelf" %>
@@ -25,5 +35,7 @@
     <%= yield %>
   </div>
 </div>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 </body>
 </html>
