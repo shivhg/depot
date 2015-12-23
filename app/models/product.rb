@@ -7,6 +7,7 @@ class Product < ActiveRecord::Base
       message: "must be a gif jpg png"
   }
   acts_as_taggable
+  acts_as_commontable
 
   has_many :line_items
 

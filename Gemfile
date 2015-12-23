@@ -6,7 +6,6 @@ gem 'rails', '4.2.4'
 gem 'acts-as-taggable-on', '~> 3.5'
 gem 'devise'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -50,3 +49,5 @@ end
 gem 'cancancan'
 gem 'kaminari'
 gem 'rspec-rails'
+gem 'commontator', '~> 4.10.0'
+gem 'pg'
